@@ -1,4 +1,4 @@
-FROM quay.io/ibmz/buildpacks-dep:buster
+FROM quay.io/ibmz/buildpack-deps:buster
 LABEL maintainer="Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>"
 
 COPY *.patch /usr/src/perl/
