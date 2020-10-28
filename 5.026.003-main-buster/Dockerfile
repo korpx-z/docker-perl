@@ -1,11 +1,10 @@
-FROM quay.io/ibmz/debian:buster
+FROM quay.io/ibmz/buildpacks-dep:buster
 LABEL maintainer="Peter Martini <PeterCMartini@GMail.com>, Zak B. Elep <zakame@cpan.org>"
 
 COPY *.patch /usr/src/perl/
 WORKDIR /usr/src/perl
 
 RUN true \
-    && apt-get -y update && apt-get -y upgrade && apt-get install -y curl bzip2 \
     && curl -SL https://www.cpan.org/src/5.0/perl-5.26.3.tar.bz2 -o perl-5.26.3.tar.bz2 \
     && echo '9ff35a613213f29ab53975141af6825ae7d4408895538cac0922e47ab92a1477 *perl-5.26.3.tar.bz2' | sha256sum -c - \
     && tar --strip-components=1 -xaf perl-5.26.3.tar.bz2 -C /usr/src/perl \
