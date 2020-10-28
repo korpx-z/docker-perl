@@ -1,0 +1,19 @@
+arch: s390x
+services:
+  - docker
+env:
+  global:
+#    - TEST_DIR="$PWD/test/5.0/"
+#    - TEST_SCRIPT="test.sh"
+    - BUILD_DIR="$PWD/5.026.003-main-buster/"
+    - REPO="quay.io/ibmz/perl"
+    - TAG="$REPO:5.026"
+before_script:
+  - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
+#  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
+script:
+  - cd $BUILD_DIR && cpanm --installdeps .
+  - docker build . --tag $TAG
+after_script:
+  - docker push $TAG
+#  - cd $TEST_DIR && bash $TEST_SCRIPT
