@@ -17,7 +17,7 @@ RUN true \
     && archFlag="$([ "$archBits" = '64' ] && echo '-Duse64bitall' || echo '-Duse64bitint')" \
     && ./Configure -Darchname="$gnuArch" "$archFlag" -Duseshrplib -Dvendorprefix=/usr/local  -des \
     && make -j$(nproc) \
- #   && TEST_JOBS=$(nproc) make test_harness \
+    && TEST_JOBS=$(nproc) make test_harness \
     && make install \
     && cd /usr/src \
     && curl -LO https://www.cpan.org/authors/id/M/MI/MIYAGAWA/App-cpanminus-1.7044.tar.gz \
