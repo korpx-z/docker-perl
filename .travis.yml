@@ -11,6 +11,7 @@ env:
 before_script:
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 #  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
+  - cpanm --installdeps .
 script:
   - cd $BUILD_DIR
   - docker build . --tag $TAG
