@@ -12,7 +12,7 @@ before_script:
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
 #  - cd $TEST_DIR && chmod +x $TEST_SCRIPT
 script:
-  - cd $BUILD_DIR && cpanm --installdeps .
+  - cd $BUILD_DIR
   - docker build . --tag $TAG
 after_script:
   - docker push $TAG
