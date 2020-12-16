@@ -14,7 +14,7 @@ Perl is a high-level, general-purpose, interpreted, dynamic programming language
 ## Create a `Dockerfile` in your Perl app project
 
 ```dockerfile
-FROM perl:5.20
+FROM quay.io/ibm/perl:5.026
 COPY . /usr/src/myapp
 WORKDIR /usr/src/myapp
 CMD [ "perl", "./your-daemon-or-script.pl" ]
@@ -32,7 +32,7 @@ $ docker run -it --rm --name my-running-app my-perl-app
 For many simple, single file projects, you may find it inconvenient to write a complete `Dockerfile`. In such cases, you can run a Perl script by using the Perl Docker image directly:
 
 ```console
-$ docker run -it --rm --name my-running-script -v <docker_volume>/path/to/myapp:/usr/src/myapp -w /usr/src/myapp quay.io/ibmz/perl:5.026 perl your-script.pl
+$ docker run -it --rm --name my-running-script -v <docker_volume>/path/to/myapp:/usr/src/myapp -w /usr/src/myapp quay.io/ibm/perl:5.026-buster perl your-script.pl
 ```
 
 # License
