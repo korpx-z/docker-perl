@@ -6,7 +6,7 @@ env:
 #    - TEST_DIR="$PWD/test/5.0/"
 #    - TEST_SCRIPT="test.sh"
     - BUILD_DIR="$PWD/5.026.003-main-buster/"
-    - REPO="quay.io/ibmz/perl"
+    - REPO="quay.io/ibm/perl"
     - TAG="$REPO:5.026"
 before_script:
   - docker login quay.io -u $ROBOT -p $ROBOT_TOKEN
