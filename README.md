@@ -1,4 +1,4 @@
-__### 5.026 is built within its [respected branch](https://github.com/korpx-z/docker-perl/tree/5.026-buster)__
+__5.026 is built within its [respected branch](https://github.com/korpx-z/docker-perl/tree/5.026-buster)__
 
 ### This image is built to run on s390x architecture.
 -    [build source](https://github.com/korpx-z/docker-perl/tree/5.026-buster)
