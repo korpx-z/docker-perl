@@ -1,0 +1,4 @@
+FROM quay.io/ibm/perl:5.026
+COPY . /usr/src/myapp
+WORKDIR /usr/src/myapp
+CMD [ "perl", "./hello.pl" ]
